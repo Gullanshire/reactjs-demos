@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+  <title>React.js Demo-2</title>
+  <link rel="stylesheet" href="../css/demo.css"></link>
+  <script src="../js/react.js"></script>
+  <script src="../js/JSXTransformer.js"></script>
+</head>
+<body>
+  <h1>Demo-2</h1>
+  <div id="container"></div>
+  <script type="text/jsx">
+  var HelloWorld = React.createClass({
+    getInitialState: function() {
+      return {};
+    },
+
+    greet: function() {
+      this.setState({ greeting: "Hello, " + this.props.name + "!" });
+    },
+
+    render: function() {
+      return <div>
+      <button onClick={this.greet}>Greet</button>
+      <br />
+      <span>{this.state.greeting}</span>
+      </div>;
+    }
+  });
+
+  React.render(
+    <HelloWorld name="cmpt470 class" />,
+    document.getElementById('container')
+  );
+  </script>
+</body>
+</html>
